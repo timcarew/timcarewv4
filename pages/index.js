@@ -1,6 +1,7 @@
-import { work } from '@/data/work';
-import Head from 'next/head';
 import { useEffect } from 'react';
+import Head from 'next/head';
+import Div100vh from 'react-div-100vh';
+import { work } from '@/data/work';
 export default function Home() {
   useEffect(() => {
     const cursor = document.querySelector('.Cursor');
@@ -17,69 +18,72 @@ export default function Home() {
         <meta property="og:image" content="/meta-tim.jpg" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <main>
-        <div className="Portfolio">
-          <p>-----------------------------------</p>
-          <p>&gt; Welcome to Tim Carew&apos;s Portfolio</p>
-          <p>-----------------------------------</p>
-          <br />
-          <p>&gt; Tim Carew</p>
-          <br />
-          <p>&gt; Front End Developer</p>
-          <br />
-          <p className="Bio">
-            &gt; Hi there! I&apos;m a dedicated front-end engineer with passion
-            for crafting top-notch web applications and user experiences. My
-            focus is on front-end development, and I specialize in using React
-            (Next.js) to build modern and efficient web applications that look
-            and feel great. I love exploring the world of animation and
-            visualization using tools like GSAP and D3. <br /> <br /> I take
-            pride in delivering high-quality work that meets the unique needs of
-            each project and client. I&apos;m a problem-solver at heart, and
-            I&apos;m always willing to go the extra mile to find the best
-            solution for any challenge. Don&apos;t just take my word for it!
-            Check out my recent projects listed below in the{' '}
-            <a href="#work">Work</a> section. <br /> <br />
-            I&apos;m always looking for new ways to improve my skills and learn
-            new technologies (including learning by doing)! Feel free to reach
-            out to me if you&apos;d like to work together!
-          </p>{' '}
-          <br />
-          <p>&gt; Work: </p>
-          <div className="Work" id="work">
-            <ul className="Work-List">
-              {work.map((item) => {
-                return (
-                  <li key={item.title} className="Work-Item">
-                    <span className="Work-Item_Title">{item.title}</span>
-                    {item.description}
-                    <span className="Work-Item_Links">
-                      {item.media && (
-                        <a href={item.media} target="_blank">
-                          In the Media
-                        </a>
-                      )}
-                      {item.href && (
-                        <a href={item.href} target="_blank">
-                          Visit Project
-                        </a>
-                      )}
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
+      <Div100vh>
+        <main>
+          <div className="Portfolio">
+            <p>-----------------------------------</p>
+            <p>&gt; Welcome to Tim Carew&apos;s Portfolio</p>
+            <p>-----------------------------------</p>
+            <br />
+            <p>&gt; Tim Carew</p>
+            <br />
+            <p>&gt; Front End Developer</p>
+            <br />
+            <p className="Bio">
+              &gt; Hi there! I&apos;m a dedicated front-end engineer with a
+              passion for crafting top-notch web applications and user
+              experiences. My focus is on front-end development, and I
+              specialize in using React (Next.js) to build modern and efficient
+              web applications that look and feel great. I love exploring the
+              world of animation and visualization using tools like GSAP and D3.{' '}
+              <br /> <br /> I take pride in delivering high-quality work that
+              meets the unique needs of each project and client. I&apos;m a
+              problem-solver at heart, and I&apos;m always willing to go the
+              extra mile to find the best solution for any challenge. Don&apos;t
+              just take my word for it! Check out my recent projects listed
+              below in the <a href="#work">Recent Work</a> section. <br />{' '}
+              <br />
+              I&apos;m always looking for new ways to improve my skills and
+              learn new technologies (including learning by doing)! Feel free to
+              reach out to me if you&apos;d like to work together!
+            </p>{' '}
+            <br />
+            <p>&gt; Recent Work: </p>
+            <div className="Work" id="work">
+              <ul className="Work-List">
+                {work.map((item) => {
+                  return (
+                    <li key={item.title} className="Work-Item">
+                      <span className="Work-Item_Title">{item.title}</span>
+                      {item.description}
+                      <span className="Work-Item_Links">
+                        {item.media && (
+                          <a href={item.media} target="_blank">
+                            In the Media
+                          </a>
+                        )}
+                        {item.href && (
+                          <a href={item.href} target="_blank">
+                            Visit Project
+                          </a>
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <p>
+              &gt; Thanks for visiting!
+              <span className="Cursor"></span>
+            </p>
           </div>
-          <p>
-            &gt; Thanks for visiting!
-            <span className="Cursor"></span>
-          </p>
-        </div>
-      </main>
+        </main>
+      </Div100vh>
       <style jsx>{`
         main {
           position: relative;
-          height: 100vh;
+          height: 100%;
           width: 100vw;
           color: #fff;
           background: linear-gradient(
