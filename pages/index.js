@@ -89,7 +89,7 @@ export default function Home() {
             #0059ff,
             #002bfe
           );
-          font-family: 'consolas', 'roboto', sans-serif;
+          font-family: 'source-code-pro', monospace;
           line-height: 1.5;
           overflow: hidden;
         }
